@@ -1,12 +1,13 @@
+const buttonElement = document.querySelector('#button');
 const gallery = document.querySelector('.gallery');
 
-const getRickAndMorty = url => {
+const getRickAndMorty = (url) => {
     fetch(url)
         .then(response => response.json())
 
         .then(data => {
             gallery.innerHTML = "";
-
+            
             data.results.forEach(element => {
 
                 let characterImgURL = element.image;
@@ -35,7 +36,7 @@ const getRickAndMorty = url => {
                 $div.append(img);
                 $div.append($p);
                 $div.append(button);
-
+                
                 const greenOnClick = () => button.classList.toggle("greenOnClick");     //this toggles class greenOnClick to like button whenever its clicked
 
                 button.addEventListener("click", greenOnClick);
@@ -54,17 +55,15 @@ const getRickAndMorty = url => {
             });
         })
 }
-getRickAndMorty("https://rickandmortyapi.com/api/character");
+getRickAndMorty("https://rickandmortyapi.com/api/character?page=6");
 
-
-let page1 = document.querySelector(".page1");
-let page2 = document.querySelector(".page2");
-let page3 = document.querySelector(".page3");
-let page4 = document.querySelector(".page4");
-let page5 = document.querySelector(".page5");
+let page6 = document.querySelector(".page6");
+let page7 = document.querySelector(".page7");
+let page8 = document.querySelector(".page8");
+let page9 = document.querySelector(".page9");
+let page10 = document.querySelector(".page10");
 
 let selectLi = document.querySelectorAll(".page");
-
 
 const removeGreen = page => {
     selectLi.forEach(element => {
@@ -74,27 +73,27 @@ const removeGreen = page => {
     li.classList.add("bg-success");
 }
 
-page1.addEventListener("click", function () {
-    getRickAndMorty("https://rickandmortyapi.com/api/character");
-    removeGreen(".page1");
+page6.addEventListener("click", function () {
+    getRickAndMorty("https://rickandmortyapi.com/api/character?page=6");
+    removeGreen(".page6");
 })
 
-page2.addEventListener("click", function () {
-    getRickAndMorty("https://rickandmortyapi.com/api/character?page=2");
-    removeGreen(".page2");
+page7.addEventListener("click", function () {
+    getRickAndMorty("https://rickandmortyapi.com/api/character?page=7");
+    removeGreen(".page7");
 })
 
-page3.addEventListener("click", function () {
-    getRickAndMorty("https://rickandmortyapi.com/api/character?page=3");
-    removeGreen(".page3");
+page8.addEventListener("click", function () {
+    getRickAndMorty("https://rickandmortyapi.com/api/character?page=8");
+    removeGreen(".page8");
 })
 
-page4.addEventListener("click", function () {
-    getRickAndMorty("https://rickandmortyapi.com/api/character?page=4");
-    removeGreen(".page4");
+page9.addEventListener("click", function () {
+    getRickAndMorty("https://rickandmortyapi.com/api/character?page=9");
+    removeGreen(".page9");
 })
 
-page5.addEventListener("click", function () {
-    getRickAndMorty("https://rickandmortyapi.com/api/character?page=5");
-    removeGreen(".page5");
+page10.addEventListener("click", function () {
+    getRickAndMorty("https://rickandmortyapi.com/api/character?page=10");
+    removeGreen(".page10");
 })

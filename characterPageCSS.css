@@ -1,0 +1,17 @@
+body {
+  background: aqua;
+}
+
+.gallery img {
+  width: 800px;
+  margin: 0 auto;
+}
+
+.gallery {
+  background: aqua;
+}
+
+.goHome {
+  text-align: center;
+  padding: 5px;
+}
